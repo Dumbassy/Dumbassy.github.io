@@ -1,7 +1,7 @@
 import React from "react";
 import Estilos from "./Principal.module.css";
-import Barra_abajo from "./Barra_abajo";
-import Barra_derecha from "./Barra_derecha";
+import BarraAbajo from "./BarraAbajo";
+import BarraDerecha from "./BarraDerecha";
 import Vainilla_riley from "./imagenes/Vainilla_riley.jpg";
 import Compu from "./imagenes/Compu.png";
 import Testing from "./imagenes/Testing.jpg";
@@ -71,7 +71,7 @@ export default class Pagina extends React.Component {
     return (
       <div>
         {" "}
-        <img id = 'foto' src={this.state.Images[pos]} className={Estilos.fondo_compu}></img>
+        <img id = 'foto' src={this.state.Images[pos]} className={Estilos.fondo_compu} alt = {""}></img>
       </div>
     );
   }
@@ -84,21 +84,21 @@ export default class Pagina extends React.Component {
           <div className="col-md-9 col-sm-7">
             <div className={Estilos.imagenes_compu}>
               <div>
-                <img src={Compu} className={Estilos.computador}></img>
+                <img src={Compu} className={Estilos.computador} alt = {""}></img>
               </div>
               <div>{
               this.Display_images(this.state.Image_pos)}</div>
             </div>
           </div>
           <div className="col-md-3 col-sm-5">
-            <Barra_derecha
+            <BarraDerecha
               Cambio_coins={this.Cambio_coins}
               current_coins={this.state.Bimbo_coins}
             />
           </div>
         </div>
         <div>
-          <Barra_abajo Valores={this.state} />
+          <BarraAbajo Valores={this.state} />
         </div>
       </div>
     );

@@ -1,15 +1,10 @@
 import React from "react";
-import Estilos from "./Barra_abajo.module.css";
+import Estilos from "./BarraAbajo.module.css";
 import handjob from "./imagenes/handjob.gif";
-import Main_character from './imagenes/Main_character.png';
 import Estadisticas from "./Estadisticas";
-import First_change from './imagenes/First_change.png'
-import First_cross from './imagenes/First_cross.png'
-import Imagen from "./imagenes/Imagen.png"
 import Makeup from "./imagenes/Makeup.png";
-import useEffect from 'react';
 
-export default class Barra_abajo extends React.Component {
+export default class BarraAbajo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -32,11 +27,15 @@ export default class Barra_abajo extends React.Component {
             <tr>
               <td>
                 {" "}
-                <img src={handjob} className={Estilos.handjob} />
+                <img src={handjob} className={Estilos.handjob} alt = {""} />
               </td>
-              <td><Estadisticas Values = {this.props.Valores} /></td>
-              <td className = {Estilos.central_contenido}></td>
-              <td><img src = {Makeup} className = {Estilos.main_character}/></td>
+              <td>
+                <Estadisticas Values={this.props.Valores} />
+              </td>
+              <td className={Estilos.central_contenido}></td>
+              <td>
+                <img src={Makeup} className={Estilos.main_character} alt = {"a"} />
+              </td>
             </tr>
           </table>
         </div>

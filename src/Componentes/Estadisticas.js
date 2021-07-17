@@ -1,9 +1,7 @@
 import React from "react";
-import Estilos from "./Barra_abajo.module.css";
+import Estilos from "./BarraAbajo.module.css";
 export default class Estadisticas extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+
   render() {
     return (
       <div className="container">

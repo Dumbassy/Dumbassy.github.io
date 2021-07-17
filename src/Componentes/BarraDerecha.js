@@ -1,11 +1,10 @@
 import React from "react";
-import Estilos from "./Barra_abajo.module.css";
+import Estilos from "./BarraAbajo.module.css";
 import Sitting from "./imagenes/Sitting.png";
-import Title from "./imagenes/Title.png";
 import Testing_title from "./imagenes/Testing_title.png"
 import Ejercicios from "./imagenes/Ejercicios.png";
 import hearth from "./imagenes/hearth.png";
-import Vainilla_riley from "./imagenes/Vainilla_riley.jpg";
+
 // Constantes de upgrade
 const Network_searching = {
   Level: [
@@ -74,7 +73,7 @@ const Complete_Bimbo = {
   Precio: [0,2000000,3000000,4000000]
 };
 
-export default class Barra_derecha extends React.Component {
+export default class BarraDerecha extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -110,14 +109,14 @@ export default class Barra_derecha extends React.Component {
     Imag.style.top = e.clientY + 'px';
     Imag.style.left = e.clientX + 'px';
     document.body.appendChild(Imag);
-    Imag.addEventListener('animationend',function(){Imag.parentElement.removeChild(Imag);}.bind(this));
+    Imag.addEventListener('animationend',function(){Imag.parentElement.removeChild(Imag);});
     var Image = document.createElement('img');
     Image.src = this.state.img ;
     Image.className = "subir_level_dos";
     Image.style.top = e.clientY + 'px';
     Image.style.left = e.clientX + 'px';
     document.body.appendChild(Image);
-    Image.addEventListener('animationend',function(){Image.parentElement.removeChild(Image);}.bind(this));
+    Image.addEventListener('animationend',function(){Image.parentElement.removeChild(Image);});
 
 
   }
@@ -129,7 +128,7 @@ export default class Barra_derecha extends React.Component {
     return (
       <div className={Estilos.Derecha_contenido}>
         <div className={Estilos.Span_title}>
-          <img className={Estilos.Title} src={Testing_title}></img>
+          <img className={Estilos.Title} src={Testing_title} alt = {""}></img>
         </div>
 
         <button
@@ -138,7 +137,7 @@ export default class Barra_derecha extends React.Component {
             if( this.props.current_coins < this.state.Bimbo_buy[0].Precio[this.state.Current_level_0 + 1]){ 
               console.log("Error");
               return;}
-            if (this.state.Current_level_0 != this.state.Bimbo_buy[0].Tam - 1) {
+            if (this.state.Current_level_0 !== this.state.Bimbo_buy[0].Tam - 1) {
               document.addEventListener('click',this.Click_corazon);
               this.setState({
                 Current_level_0: (this.state.Current_level_0 += 1),
@@ -155,7 +154,7 @@ export default class Barra_derecha extends React.Component {
           }}
         >
           <div>
-            <img src={Sitting} className={Estilos.tam_images} />
+            <img src={Sitting} className={Estilos.tam_images} alt = {""} />
             <span>
               {this.state.Bimbo_buy[0].Level[this.state.Current_level_0]}
             </span>
@@ -168,9 +167,9 @@ export default class Barra_derecha extends React.Component {
             if( this.props.current_coins < 100){ 
               console.log("Error");
               return;}
-            if ((this.state.Current_level_3 != this.state.Bimbo_buy[3].Tam - 1)) {
+            if ((this.state.Current_level_3 !== this.state.Bimbo_buy[3].Tam - 1)) {
               this.setState({
-                Current_level_3: (this.state.Current_level_3 += 1),
+                Current_level_3: (this.state.Current_level_3 += 1)
               });
               console.log(
                 this.state.Bimbo_buy[3].Level[this.state.Current_level_3]
@@ -185,7 +184,7 @@ export default class Barra_derecha extends React.Component {
           }}
         >
           <div>
-            <img src={Ejercicios} className={Estilos.tam_images} />
+            <img src={Ejercicios} className={Estilos.tam_images}  alt = {""}/>
             <span>
               {this.state.Bimbo_buy[3].Level[this.state.Current_level_3]}
             </span>
