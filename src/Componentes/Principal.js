@@ -69,10 +69,8 @@ export default class Pagina extends React.Component {
 
   Display_images(pos) {
     return (
-      <div>
-        {" "}
+
         <img id = 'foto' src={this.state.Images[pos]} className={Estilos.fondo_compu} alt = {""}></img>
-      </div>
     );
   }
 
@@ -85,9 +83,9 @@ export default class Pagina extends React.Component {
             <div className={Estilos.imagenes_compu}>
               <div>
                 <img src={Compu} className={Estilos.computador} alt = {""}></img>
+                {this.Display_images(this.state.Image_pos)}
               </div>
-              <div>{
-              this.Display_images(this.state.Image_pos)}</div>
+              
             </div>
           </div>
           <div className="col-md-3 col-sm-5">

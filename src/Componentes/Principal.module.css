@@ -4,7 +4,7 @@
     background-color: #0b0006;
 }
 .computador{
-    width:75.6rem;
+    width:107%;
     height:35rem;
     position:relative;
     right:2vh;
@@ -12,15 +12,17 @@
     z-index: 1;
 }
 .imagenes_compu{
-    width:74.5rem;
-    height:33rem;
+    width:100%;
+    height:auto;
+    max-height: 30rem;
     position:relative;
     border: 5px ridge #f5e293;
     right:2vh;
 }
 .fondo_compu{
-    width:66.3rem;
-    height:26.8rem;
+    width:95%;
+    height:auto;
+    max-height:54.4vh;
     position:relative;
     left: 8.3vh;
     bottom:68.6vh;
