@@ -1,0 +1,29 @@
+.contenido{
+    height:100%;
+    width:100%;
+    background-color: #0b0006;
+}
+.computador{
+    width:75.6rem;
+    height:35rem;
+    position:relative;
+    right:2vh;
+    bottom:3.6vh;
+    z-index: 1;
+}
+.imagenes_compu{
+    width:74.5rem;
+    height:33rem;
+    position:relative;
+    border: 5px ridge #f5e293;
+    right:2vh;
+}
+.fondo_compu{
+    width:66.3rem;
+    height:26.8rem;
+    position:relative;
+    left: 8.3vh;
+    bottom:68.6vh;
+    opacity: 1;
+    transition: opacity 1.2s;
+}
