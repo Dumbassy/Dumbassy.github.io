@@ -1,7 +1,7 @@
 import React from "react";
 import Estilos from "./BarraAbajo.module.css";
 export default class Estadisticas extends React.Component {
-
+ // Simplemente muestra el estado actual de las variables
   render() {
     return (
       <div className="container">

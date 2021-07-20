@@ -5,7 +5,7 @@
   color: white;
   border-top: 17px  rgba(20, 141, 223, 0.4);
   font-family: 'Caveat', cursive;
-  font-size: 18px;
+  font-size: 20px;
 }
 .HandStatus {
   width: 33%;
@@ -47,7 +47,6 @@
   color: #f10188;
   font-family: "Ewert", cursive;
   border: 5px ridge #070707;
-
 }
 .Derecha_button:hover{
     color: #fcfcfc;
