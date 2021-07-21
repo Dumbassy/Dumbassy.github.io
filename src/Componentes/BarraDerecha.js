@@ -5,7 +5,7 @@ import Testing_title from "./imagenes/Testing_title.png";
 import Ejercicios from "./imagenes/Ejercicios.png";
 import hearth from "./imagenes/hearth.png";
 import First_cross from "./imagenes/First_cross.png"
-
+import Maquillaje from "./imagenes/Maquillaje.png"
 // Constantes de upgrade
 const Network_searching = {
   Level: [
@@ -99,6 +99,7 @@ export default class BarraDerecha extends React.Component {
       Current_level_7: 0,
       Current_level_8: 0,
       img: hearth,
+
     };
   }
 
@@ -110,7 +111,7 @@ export default class BarraDerecha extends React.Component {
     Imag.style.left = e.clientX + "px";
     document.body.appendChild(Imag);
     Imag.addEventListener("animationend", function () {
-      Imag.parentElement.removeChild(Imag);
+    Imag.parentElement.removeChild(Imag);
     });
     var Image = document.createElement("img");
     Image.src = this.state.img;
@@ -123,8 +124,10 @@ export default class BarraDerecha extends React.Component {
     });
   };
 
+
+
   Buttons(Pos) {
-    if (Pos == 0) {
+    if (Pos === 0) {
       return (
         <button
           className={Estilos.Derecha_button}
@@ -160,13 +163,13 @@ export default class BarraDerecha extends React.Component {
             <img src={Sitting} className={Estilos.tam_images} alt={""} />
             <span>
               {this.state.Bimbo_buy[0].Level[this.state.Current_level_0]}
-              <span>{this.state.Bimbo_buy[1].Precio[this.state.Current_level_1]} </span>
             </span>
+            <span className = {Estilos.precios}>BC : $ {this.state.Bimbo_buy[0].Precio[this.state.Current_level_0 + 1]} </span>
           </div>
         </button>
       );
     }
-    else if (Pos == 1) {
+    else if (Pos === 1) {
       return(
       <button
         className={Estilos.Derecha_button}
@@ -193,16 +196,18 @@ export default class BarraDerecha extends React.Component {
         }}
       >
         <div>
-          <img src={First_cross} className={Estilos.tam_images} alt={""} />
+          <img src={Maquillaje} className={Estilos.tam_images} alt={""} />
           <span>
             {this.state.Bimbo_buy[1].Level[this.state.Current_level_1]}
-
           </span>
+          <span className = {Estilos.precios}>BC : $ {this.state.Bimbo_buy[1].Precio[this.state.Current_level_1 + 1]} </span>
         </div>
       </button>
       )}
-    else if (Pos == 3) {
+    else if (Pos === 3) {
+      if(this.props.coins > 5000){this.setState({Display_3: this.state.Display_3 + 1})}
       return(
+      
       <button
         className={Estilos.Derecha_button}
         onClick={() => {
@@ -232,21 +237,27 @@ export default class BarraDerecha extends React.Component {
           <span>
             {this.state.Bimbo_buy[3].Level[this.state.Current_level_3]}
           </span>
+          <span className = {Estilos.precios}>BC : $ {this.state.Bimbo_buy[3].Precio[this.state.Current_level_3 + 1]} </span>
         </div>
       </button>
       )}
      
   }
 
+
+
   render() {
     return (
+
       <div className={Estilos.Derecha_contenido}>
+        
         <div className={Estilos.Span_title}>
           <img className={Estilos.Title} src={Testing_title} alt={""}></img>
         </div>
         {this.Buttons(0)}
-        {this.Buttons(1)}
-        {this.Buttons(3)}
+        {(this.props.Display_1 > 0) ? this.Buttons(1) : null}
+        {(this.props.Display_3 > 0) ? this.Buttons(3): null}
+
 
         {/*<BotonDerecha Cambio_coins = {this.props.Cambio_coins} current_coins={this.props.Bimbo_coins} Bimbo_buy = {this.state.Bimbo_buy} Current_Level = {this.state.Current_level_0}
         />*/}
