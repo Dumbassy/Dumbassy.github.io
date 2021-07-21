@@ -27,6 +27,11 @@
   width: 99vh;
 }
 
+
+
+/*Contenido de la barra derecha*/
+
+
 .Derecha_contenido {
   justify-content: start;
   min-width: 100%;
@@ -37,16 +42,30 @@
   overflow-y: scroll;
   border: 5px ridge #2e2a18;
   font-size: 20px;
+  overflow-x: hidden;
 }
 
 .Derecha_button {
-  background-color: #4b002a;
+  background-color: #ea28d9;
+  background-image: radial-gradient(circle at center center, #330349, #ea28d9), repeating-radial-gradient(circle at center center, #dcacf1, #d6a5ec, 24px, transparent 38px, transparent 44px);
+  background-blend-mode: multiply;
   width: 100%;
   border: none;
   text-align: start;
   color: #f10188;
   font-family: "Ewert", cursive;
-  border: 5px ridge #070707;
+  border: 5px ridge #fafafa;
+  animation: mostrar 4s ease-out;
+}
+@keyframes mostrar{
+  0%{
+    visibility:hidden;
+    opacity: 0;
+  }
+  100%{
+    visibility: visible;
+    opacity: 1;
+  }
 }
 .Derecha_button:hover{
     color: #fcfcfc;
@@ -76,12 +95,10 @@
   animation: pop_corazon 1s ease-out;
   z-index: 9999;
 }
-
-@keyframes pop_corazon {
-  0%{
-    opacity: 1;
-  }
-  100%{
-    opacity: 0.2;
-  }
+.precios{
+  display: block;
+  position:relative;
+  left: 42%;
+  bottom:2rem;
+  color:rgb(250, 182, 36);
 }

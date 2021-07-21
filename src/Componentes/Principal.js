@@ -9,6 +9,7 @@ import Testing from "./imagenes/Testing.jpg";
 //Página principal, acá se renderizan todos los demás componentes. La mayoría de las variables que progresan con el tiempo irán acá
 
 export default class Pagina extends React.Component {
+  
   constructor(props) {
     super(props);
     this.state = {
@@ -22,6 +23,15 @@ export default class Pagina extends React.Component {
       Images: [Testing, Vainilla_riley],
       Image_pos: 0,
       get_all: {},
+      Display_0: 0,
+      Display_1: 0,
+      Display_2: 0,
+      Display_3: 0,
+      Display_4: 0,
+      Display_5: 0,
+      Display_7: 0,
+      Display_8: 0,
+      
     };
   }
 
@@ -31,11 +41,23 @@ export default class Pagina extends React.Component {
     this.timer = this.Updating();
     this.loop = this.Looping();
   }
+  componentWillUnmount() {
+  clearInterval(this.timer);
+  }
+
 
   // -- Loop de monedas 
   Up_coins = (valor) => {
-    this.setState({ Bimbo_coins: parseInt(this.state.Bimbo_coins + valor) });
-    console.log(this.state.Bimbo_coins);
+    this.setState({ Bimbo_coins: parseInt(this.state.Bimbo_coins + valor) })
+    if(this.state.Bimbo_coins > 500 && this.state.Display_1 == 0){this.setState({ Display_1: 1})}
+    if(this.state.Bimbo_coins > 1500){}
+    if(this.state.Bimbo_coins > 5000  && this.state.Display_3 == 0){this.setState({Display_3: 1})}
+    if(this.state.Bimbo_coins > 1400){}
+    if(this.state.Bimbo_coins > 11400){}
+    if(this.state.Bimbo_coins > 11400){}
+    if(this.state.Bimbo_coins > 11400){}
+    if(this.state.Bimbo_coins > 11400){}
+
   };
 
   Updating = () => {
@@ -91,6 +113,7 @@ export default class Pagina extends React.Component {
 
     return (
       <div className={Estilos.contenido}>
+        
         <div className="row">
           <div className="col-md-9 col-sm-7">
             <div className={Estilos.imagenes_compu}>
@@ -105,7 +128,9 @@ export default class Pagina extends React.Component {
             
             <BarraDerecha
               Cambio_coins={this.Cambio_coins}  /* La función de Cambio de monedas es ahora utilizable por este componente hijo*/
-              current_coins={this.state.Bimbo_coins} 
+              current_coins={this.state.Bimbo_coins}
+              Display_1 = {this.state.Display_1}
+              Display_3 = {this.state.Display_3}
             />
 
           </div>
