@@ -17,7 +17,7 @@ export default class Estadisticas extends React.Component {
             </tr>
             <tr>
               <td>Ass : {this.props.Values.Ass}</td>
-              <td>Status : {this.props.Values.Current_State}</td>
+              <td>Bonus : {this.props.Values.Bonus_actual}</td>
             </tr>
           </tbody>
         </table>

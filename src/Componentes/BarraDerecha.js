@@ -4,8 +4,8 @@ import Sitting from "./imagenes/Sitting.png";
 import Testing_title from "./imagenes/Testing_title.png";
 import Ejercicios from "./imagenes/Ejercicios.png";
 import hearth from "./imagenes/hearth.png";
-import First_cross from "./imagenes/First_cross.png"
 import Maquillaje from "./imagenes/Maquillaje.png"
+import Selfie from "./imagenes/Selfie.png"
 // Constantes de upgrade
 const Network_searching = {
   Level: [
@@ -16,59 +16,59 @@ const Network_searching = {
     "Sissy Porn",
     "Hypno Porn",
     "Brainwashing",
-    "Dum Bimbo",
+    "Dumb Bimbo",
   ],
-  Bonus_level: [0, 0.1, 0.15, 0.3, 0.35, 0.7, 1.5, 2.5, 3.5],
+  Bonus_level: [0, 0.3, 0.9, 1.5, 3, 5, , 12, 19],
   Tam: 8,
-  Precio: [0, 100, 300, 600, 1000, 10000, 100000, 150000, 200000],
+  Precio: [0, 100, 600, 900, 1500, 3000, 5000, 12000, 190000],
 };
 const Beauty_care = {
-  Level: ["Basis", "Lips", "Eyes", "Hair Color"],
-  Bonus_level: [0, 0.4, 0.7, 1],
+  Level: ["Nothing","Basis", "Lips", "Eyes", "Hair Color"],
+  Bonus_level: [0, 2.5, 3.7, 1],
   Tam: 4,
-  Precio: [0, 500, 3000, 15000, 35000],
+  Precio: [0, 2500, 3700, 15000, 35000],
 };
 
 const Crossdress = {
-  Level: ["Stocking", "Bra", "Panties", "Girly clothes", "Bitchy clothes"],
+  Level: ["Nothing","Stocking", "Bra", "Panties", "Girly clothes", "Bitchy clothes"],
   Bonus_level: [0, 0.5, 1, 1.5, 2.5, 3.5],
   Tam: 6,
   Precio: [0, 3000, 12000, 48000, 65000, 80000],
 };
 
 const Shape = {
-  Level: ["Diet", "Abdomen", "Squads", "Hormnonnes"],
+  Level: ["Nothing","Diet", "Abdomen", "Squads", "Hormnonnes"],
   Bonus_level: [0, 1, 1.5, 2.5, 4],
   Tam: 4,
   Precio: [0, 6000, 12000, 48000, 90000, 120000],
 };
 const Sissify = {
-  Level: ["Cage", "Buttplug", "Dildo", "Reduce dick"],
+  Level: ["Nothing","Cage", "Buttplug", "Dildo", "Reduce dick"],
   Bonus_level: [0, 2, 2.5, 3, 12],
   Tam: 5,
   Precio: [0, 15000, 43000, 90000, 350000],
 };
 const Training = {
-  Level: ["Handjob", "Blowjob", "Anal Sex"],
+  Level: ["Nothing","Handjob", "Blowjob", "Anal Sex"],
   Bonus_level: [0, 4, 6, 8],
   Tam: 4,
   Precio: [0, 250000, 500000, 1000000],
 };
 
 const Bimbofication = {
-  Level: ["Implant, Lips"],
+  Level: ["Nothing","Implant, Lips"],
   Bonus_level: [0, 5, 5],
   Tam: 3,
   Precio: [1000000, 1000000],
 };
 const Work = {
-  Level: ["Handjob", "Blowjob", "Sex", "Whore", "Free Whore"],
+  Level: ["Nothing","Handjob", "Blowjob", "Sex", "Whore", "Free Whore"],
   Bonus_level: [0, 5, 5, 5, 5, 7, 12],
   Tam: 5,
   Precio: [1000000, 1000000, 1000000, 1000000, 1500000, 2500000],
 };
 const Complete_Bimbo = {
-  Level: ["IQ Drop", "No thinking", "No brain"],
+  Level: ["Nothing","IQ Drop", "No thinking", "No brain"],
   Bonus_level: [0, 10, 15, 20],
   Tam: 4,
   Precio: [0, 2000000, 3000000, 4000000],
@@ -132,6 +132,9 @@ export default class BarraDerecha extends React.Component {
         <button
           className={Estilos.Derecha_button}
           onClick={(e) => {
+            if(this.state.Current_level_0 > 0){
+              this.props.Bimboficar();
+            }
             if (
               this.props.current_coins <
               this.state.Bimbo_buy[0].Precio[this.state.Current_level_0 + 1]
@@ -154,6 +157,7 @@ export default class BarraDerecha extends React.Component {
                 this.state.Bimbo_buy[0].Bonus_level[this.state.Current_level_0],
                 this.state.Bimbo_buy[0].Precio[this.state.Current_level_0]
               );
+
             } else {
               return;
             }
@@ -198,12 +202,47 @@ export default class BarraDerecha extends React.Component {
         <div>
           <img src={Maquillaje} className={Estilos.tam_images} alt={""} />
           <span>
-            {this.state.Bimbo_buy[1].Level[this.state.Current_level_1]}
+            {this.state.Bimbo_buy[1].Level[this.state.Current_level_1 + 1]}
           </span>
           <span className = {Estilos.precios}>BC : $ {this.state.Bimbo_buy[1].Precio[this.state.Current_level_1 + 1]} </span>
         </div>
       </button>
       )}
+      else if (Pos === 2) {
+        return(
+        <button
+          className={Estilos.Derecha_button}
+          onClick={() => {
+            if (this.props.current_coins < this.state.Bimbo_buy[2].Precio[this.state.Current_level_2 + 1]) {
+              console.log("Error");
+              return;
+            }
+            if (this.state.Current_level_2 !== this.state.Bimbo_buy[2].Tam) {
+              this.setState({
+                Current_level_2: (this.state.Current_level_2 += 1),
+              });
+              console.log(
+                this.state.Bimbo_buy[2].Level[this.state.Current_level_2]
+              );
+              this.props.Cambio_coins(
+                this.state.Bimbo_buy[2].Bonus_level[this.state.Current_level_2],
+                this.state.Bimbo_buy[2].Precio[this.state.Current_level_2]
+              );
+            } else {
+              console.log("Algo pasó");
+              return;
+            }
+          }}
+        >
+          <div>
+            <img src={Selfie} className={Estilos.tam_images} alt={""} />
+            <span>
+              {this.state.Bimbo_buy[2].Level[this.state.Current_level_2]}
+            </span>
+            <span className = {Estilos.precios}>BC : $ {this.state.Bimbo_buy[2].Precio[this.state.Current_level_2 + 1]} </span>
+          </div>
+        </button>
+        )}
     else if (Pos === 3) {
       if(this.props.coins > 5000){this.setState({Display_3: this.state.Display_3 + 1})}
       return(
@@ -235,7 +274,7 @@ export default class BarraDerecha extends React.Component {
         <div>
           <img src={Ejercicios} className={Estilos.tam_images} alt={""} />
           <span>
-            {this.state.Bimbo_buy[3].Level[this.state.Current_level_3]}
+            {this.state.Bimbo_buy[3].Level[this.state.Current_level_3 + 1]}
           </span>
           <span className = {Estilos.precios}>BC : $ {this.state.Bimbo_buy[3].Precio[this.state.Current_level_3 + 1]} </span>
         </div>
@@ -247,6 +286,8 @@ export default class BarraDerecha extends React.Component {
 
 
   render() {
+
+    
     return (
 
       <div className={Estilos.Derecha_contenido}>
@@ -256,6 +297,7 @@ export default class BarraDerecha extends React.Component {
         </div>
         {this.Buttons(0)}
         {(this.props.Display_1 > 0) ? this.Buttons(1) : null}
+        {(this.props.Display_2 > 0)  ? this.Buttons(2):null}
         {(this.props.Display_3 > 0) ? this.Buttons(3): null}
 
 
