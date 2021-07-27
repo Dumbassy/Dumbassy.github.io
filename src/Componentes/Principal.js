@@ -116,7 +116,9 @@ export default class Pagina extends React.Component {
 
   Display_images(pos) {
     return (
-        <div>
+        <div className={Estilos.contiene_loop}>
+
+        <img src = {Compu}  className = {Estilos.computador}></img>
         <img id = 'foto' src={this.state.Images[pos]} className={Estilos.fondo_compu} alt = {""}></img>
         <div className = {Estilos.mensajes}><h1>{this.state.Text[pos]}</h1></div>
         </div>
@@ -129,19 +131,13 @@ export default class Pagina extends React.Component {
     return (
       <div className={Estilos.contenido}>
         
-        <div className="row">
-          <div className="col-md-9 col-sm-7">
-            <div className={Estilos.imagenes_compu}>
-              <div>
-                
-                
-                <img src={Compu} className={Estilos.computador} alt = {""}></img>
+        <div className="row no-gutters">
+          <div className="col-md-9 col-sm-12 cola">
+            <div className={Estilos.imagenes_compu}>  
                 {this.Display_images(this.state.Image_pos)    /* Llama a la función de renderizado*/}
-              </div>
-              
             </div>
           </div>
-          <div className="col-md-3 col-sm-5">
+          <div className="col-md-3 col-sm-12 cola">
             
             <BarraDerecha
               Bimboficar = {this.Bimboficar}
@@ -155,7 +151,7 @@ export default class Pagina extends React.Component {
 
           </div>
         </div>
-        <div>
+        <div className = "row no-gutters">
           <BarraAbajo Valores={this.state} Bimbofication = {this.state.Bimbofication} /* Se llama al componente "BarraAbajo" */ /> 
         </div>
       </div>

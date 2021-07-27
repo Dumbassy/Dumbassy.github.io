@@ -3,47 +3,60 @@
     width:100%;
     background-color: #0b0006;
 }
+/* Margen Bimbo */
 .computador{
-    width:107%;
-    height:35rem;
-    position:relative;
-    right:2vh;
-    bottom:3.6vh;
-    z-index: 1;
+    width:102%;
+    height:38em;
+    min-height: 38em;
+    max-height: 38em;
+    bottom:-3.7em;
+    position:absolute;
+    box-sizing: border-box;
+    z-index: 110000;
 }
 .imagenes_compu{
     width:100%;
-    height:auto;
-    max-height: 30rem;
+    height:100%;
+    max-height: 30em;
+    min-height: 30em;
     position:relative;
-    border: 5px ridge #f5e293;
+    padding:0;
+    box-sizing: border-box;
+    text-align: center;
     right:2vh;
 }
+.contiene_loop{
+    width:100%;
+    height:100%;
+    max-height: 100%;
+    min-height: 100%;
+
+}
+/* Las imagenes que se están loopeando */
 .fondo_compu{
-    width:95%;
-    height:auto;
-    max-height:54.4vh;
+    box-sizing: border-box;
+    width:100%;
+    height:100%;
+    max-height: 100%;
     position:relative;
-    left: 8.3vh;
-    bottom:68.6vh;
+    padding:0;
+    margin:0;
+    border:0;
     opacity: 0.8;
     transition: opacity 0.1s;
 }
 .mensajes{
-    position:absolute;
-    height:1000px;
-    width:1000px;
+    position:relative;
+    bottom:18.3em;
+    height:auto;
+    width:auto;
     z-index: 9999;
-    left: 15vh;
-    top:20vh;
     font-family: 'Dancing Script', cursive;
     text-align:center;
 
-    
-
 }
 h1{
-    font-size: 150px;
+    font-size: 100px;
     color: #fff;
     opacity:0.5
 }

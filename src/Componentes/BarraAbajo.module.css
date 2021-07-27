@@ -40,7 +40,9 @@
   height: 26.5em;
   background-color: #650139;
   overflow-y: scroll;
-  border: 5px ridge #2e2a18;
+  padding:0;
+  margin:0;
+  border:0;
   font-size: 20px;
   overflow-x: hidden;
 }
@@ -80,8 +82,9 @@
   height: 18vh;
 }
 .Span_title {
-  background-color: rgb(48, 5, 5);
-  border: 5px ridge #2e2a18;
+  padding:0;
+  margin:0;
+  border:0;
 }
 .tam_images{
     height:13vh;
