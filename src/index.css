@@ -1,45 +1,72 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.subir_level{
-  position:fixed;
+.subir_level {
+  position: fixed;
   animation: pop_corazon 1s ease-out;
   z-index: 9999;
-  transform-origin:40px 0;
+  transform-origin: 40px 0;
 }
-.subir_level_dos{
-  position:fixed;
+.subir_level_dos {
+  position: fixed;
   animation: pop_corazon_dos 1s ease-out;
   z-index: 9999;
-  transform-origin:90px 10px;
+  transform-origin: 90px 10px;
+}
+
+div.feminizacion {
+  position: absolute;
+  top:0px;
+  bottom:0px;
+  box-sizing: border-box;
+  border-style: solid;
+  border-color: #9237e7;
+  border-radius: 50%;
+  animation: feminizando 2s ease-out;
+  width:0.5em; height:0.5em;
+  z-index: 9999;
+}
+
+@keyframes feminizando {
+  0% {
+    opacity: 1;
+
+  }
+  100% {
+    opacity: 0.2;
+    width: 450px;
+    height: 450px;
+    
+
+  }
 }
 
 @keyframes pop_corazon {
-  0%{
-    opacity:1;
+  0% {
+    opacity: 1;
   }
 
-  100%{
-    transform: translateY(-50px) translateX(-30px) rotate(-20deg) ;
+  100% {
+    transform: translateY(-50px) translateX(-30px) rotate(-20deg);
     opacity: 0.2;
   }
 }
 @keyframes pop_corazon_dos {
-  0%{
-    opacity:1;
+  0% {
+    opacity: 1;
   }
 
-  100%{
+  100% {
     transform: translateY(-30px) rotate(40deg);
     opacity: 0.2;
   }

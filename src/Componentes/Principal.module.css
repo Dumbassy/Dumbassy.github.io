@@ -26,6 +26,24 @@
     position:relative;
     left: 8.3vh;
     bottom:68.6vh;
-    opacity: 1;
-    transition: opacity 1.2s;
+    opacity: 0.8;
+    transition: opacity 0.1s;
+}
+.mensajes{
+    position:absolute;
+    height:1000px;
+    width:1000px;
+    z-index: 9999;
+    left: 15vh;
+    top:20vh;
+    font-family: 'Dancing Script', cursive;
+    text-align:center;
+
+    
+
+}
+h1{
+    font-size: 150px;
+    color: #fff;
+    opacity:0.5
 }
