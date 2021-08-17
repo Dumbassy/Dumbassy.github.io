@@ -12,13 +12,13 @@ code {
     monospace;
 }
 .subir_level {
-  position: fixed;
+  position: absolute;
   animation: pop_corazon 1s ease-out;
-  z-index: 9999;
+  z-index: 19999;
   transform-origin: 40px 0;
 }
 .subir_level_dos {
-  position: fixed;
+  position: absolute;
   animation: pop_corazon_dos 1s ease-out;
   z-index: 9999;
   transform-origin: 90px 10px;
@@ -75,4 +75,11 @@ div.feminizacion {
   padding:0;
   margin:0;
   border:0;
+}
+.padiando{
+  padding-top: 3em;
+}
+.alin{
+  text-align: end;
+
 }

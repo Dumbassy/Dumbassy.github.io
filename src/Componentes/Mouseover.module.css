@@ -1,0 +1,9 @@
+.caja{
+    height: 200px;
+    width: 200px;
+    margin: 10px;
+    border: 2px solid rgb(1, 253, 85);
+    background-color:#ccc;
+    z-index: 8999999;
+    box-sizing: content-box;
+}
