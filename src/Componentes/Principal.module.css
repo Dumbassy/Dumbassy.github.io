@@ -2,6 +2,7 @@
     height:100%;
     width:100%;
     background-color: #0b0006;
+    
 }
 /* Margen Bimbo */
 .computador{
@@ -12,7 +13,7 @@
     bottom:-3.7em;
     position:absolute;
     box-sizing: border-box;
-    z-index: 110000;
+    z-index: 1100;
 }
 .imagenes_compu{
     width:100%;

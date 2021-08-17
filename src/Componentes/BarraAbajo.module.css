@@ -14,6 +14,19 @@
   height: 200px;
   width: 200px;
 }
+.handjob:hover{
+  height: 210px;
+  width:210px;
+}
+.handjob:active{
+  transform: translateY(8px);
+
+}
+.btnn{
+  background-color: #0b0006;
+  border:none;
+  box-shadow: 0;
+}
 .main_character {
   height: 200px;
   width: 200px;

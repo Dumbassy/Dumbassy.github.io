@@ -26,19 +26,23 @@ export default class Pagina extends React.Component {
       Images: [Testing,Spiral, Vainilla_riley,Spiral,Banged,Spiral,Surprise,Spiral],
       Text: ["Stupid", "Whore", "Bimbo", "Dumb","Obey","Cock Sucker"],
       Image_pos: 0,
-      get_all: {},
       Display_0: 0,
       Display_1: 0,
       Display_2: 0,
       Display_3: 0,
       Display_4: 0,
       Display_5: 0,
+      Display_6: 0,
       Display_7: 0,
       Display_8: 0,
+      Pos_loop: 0,
+      Tiempo_loop:100,
+      Tiempo_oppacity:65,
       
     };
     this.Cambio_coins = this.Cambio_coins.bind(this);
     this.Bimboficar = this.Bimboficar.bind(this);
+    this.Clicking_dick =  this.Clicking_dick.bind(this);
 
   }
 
@@ -60,7 +64,7 @@ export default class Pagina extends React.Component {
     if(this.state.Bimbo_coins > 1500 && this.state.Display_2 == 0){this.setState({Display_2: 1})}
     if(this.state.Bimbo_coins > 5000  && this.state.Display_3 == 0){this.setState({Display_3: 1})}
     if(this.state.Bimbo_coins > 1400){}
-    if(this.state.Bimbo_coins > 11400){}
+    if(this.state.Bimbo_coins > 11400 && this.state.Display_5 == 0){this.setState({Display_5:1})}
     if(this.state.Bimbo_coins > 11400){}
     if(this.state.Bimbo_coins > 11400){}
     if(this.state.Bimbo_coins > 11400){}
@@ -70,26 +74,29 @@ export default class Pagina extends React.Component {
   Updating = () => {
     setInterval(() => {
       this.Up_coins(this.state.Bonus_actual);
-    }, 500);
+    }, 1000);
   };
   // -- Utiliza el "Bonus Actual" para aumentar la cantidad de monedas como corresponda 
   
 
-  //Cambia el bonus
-  Update_bonus(num) {
-    this.setState({ Bonus_actual: this.state.Bonus_actual + num });
-  }
+
 
   //Modifica el parametro "Bonus Actual" y resta el coste de la mejora a las monedas totales
   Cambio_coins = (Upgrade, Minus) => {
+    let Suma = this.state.Bonus_actual +this.state.Bonus_actual*Upgrade;
+    Suma = parseFloat(Suma.toFixed(2));
+    this.setState({ Bonus_actual: Suma });
     this.setState({
-      Bonus_actual: this.state.Bonus_actual + this.state.Bonus_actual * Upgrade,
+      Bonus_actual: Suma,
       Bimbo_coins: this.state.Bimbo_coins - Minus,
     });
   };
 
-  Bimboficar(){
-    this.setState({Bimbofication: this.state.Bimbofication + 1});
+  Bimboficar(Value){
+    let Suma = this.state.Bimbofication + Value;
+    Suma = parseFloat(Suma.toFixed(2));
+    
+    this.setState({Bimbofication: Suma});
   }
 
 
@@ -108,8 +115,8 @@ export default class Pagina extends React.Component {
       else{
         this.setState({Image_pos: 0})
       }
-      setTimeout(()=>{imagen.style.opacity = 0},65)
-    },150)
+      setTimeout(()=>{imagen.style.opacity = 0},this.state.Tiempo_oppacity)
+    },this.state.Tiempo_loop)
   }
 
   //Renderizado del cambio de fotos
@@ -125,6 +132,9 @@ export default class Pagina extends React.Component {
     );
   }
 
+  Clicking_dick(){
+    this.setState({Bimbo_coins: this.state.Bimbo_coins + 1});
+  }
   
 
   render() {
@@ -146,13 +156,15 @@ export default class Pagina extends React.Component {
               Display_1 = {this.state.Display_1}
               Display_2 = {this.state.Display_2}
               Display_3 = {this.state.Display_3}
+              Display_5 = {this.state.Display_5}
               
             />
 
           </div>
         </div>
         <div className = "row no-gutters">
-          <BarraAbajo Valores={this.state} Bimbofication = {this.state.Bimbofication} /* Se llama al componente "BarraAbajo" */ /> 
+          <BarraAbajo Valores={this.state} Bimbofication = {this.state.Bimbofication}
+           Clicking_dick =  {this.Clicking_dick} /* Se llama al componente "BarraAbajo" */ /> 
         </div>
       </div>
     );
