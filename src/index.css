@@ -1,16 +1,4 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
 .subir_level {
   position: absolute;
   animation: pop_corazon 1s ease-out;
@@ -54,32 +42,76 @@ div.feminizacion {
 @keyframes pop_corazon {
   0% {
     opacity: 1;
+
   }
 
   100% {
     transform: translateY(-50px) translateX(-30px) rotate(-20deg);
     opacity: 0.2;
+
   }
 }
 @keyframes pop_corazon_dos {
   0% {
     opacity: 1;
+
   }
 
   100% {
     transform: translateY(-30px) rotate(40deg);
     opacity: 0.2;
+
   }
 }
 .cola{
-  padding:0;
-  margin:0;
-  border:0;
+  width: 80vw;
+  height: 70vh;
+  float: left;
 }
-.padiando{
-  padding-top: 3em;
+
+.barra{
+  float: left;
+  width:20%;
+  height: 70%;
 }
+
 .alin{
   text-align: end;
 
+}
+
+
+#info
+{
+	font-size: 18px;
+	color: #555;
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+a{
+	color: #074E8C;
+}
+
+.scrollbar
+{
+	margin-left: 30px;
+	float: left;
+	height: 300px;
+	width: 65px;
+	background: #F5F5F5;
+	overflow-y: scroll;
+	margin-bottom: 25px;
+}
+
+.force-overflow
+{
+	min-height: 450px;
+}
+
+#wrapper
+{
+	text-align: center;
+	width: 500px;
+	margin: auto;
 }

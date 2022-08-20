@@ -2,12 +2,12 @@ import React from "react";
 import Estilos from "./Principal.module.css";
 import BarraAbajo from "./BarraAbajo";
 import BarraDerecha from "./BarraDerecha";
-import Vainilla_riley from "./imagenes/Vainilla_riley.jpg";
+import Vainilla_riley from "./imagenes/blackwa.webp";
 import Compu from "./imagenes/Compu.png";
-import Testing from "./imagenes/Testing.jpg";
-import Spiral from "./imagenes/Spiral.jpg"
-import Banged from "./imagenes/Banged.jpg"
-import Surprise from "./imagenes/Surprise.jpg"
+import Testing from "./imagenes/desires.webp";
+import Spiral from "./imagenes/barbie.gif"
+import Banged from "./imagenes/bimbo-hypno2.gif"
+import Surprise from "./imagenes/giiif.webp"
 
 //Página principal, acá se renderizan todos los demás componentes. La mayoría de las variables que progresan con el tiempo irán acá
 
@@ -36,8 +36,8 @@ export default class Pagina extends React.Component {
       Display_7: 0,
       Display_8: 0,
       Pos_loop: 0,
-      Tiempo_loop:100,
-      Tiempo_oppacity:65,
+      Tiempo_loop:2000,
+      Tiempo_oppacity:50,
       
     };
     this.Cambio_coins = this.Cambio_coins.bind(this);
@@ -115,7 +115,7 @@ export default class Pagina extends React.Component {
       else{
         this.setState({Image_pos: 0})
       }
-      setTimeout(()=>{imagen.style.opacity = 0},this.state.Tiempo_oppacity)
+      setTimeout(()=>{imagen.style.opacity = 0.4},this.state.Tiempo_oppacity)
     },this.state.Tiempo_loop)
   }
 
@@ -124,10 +124,9 @@ export default class Pagina extends React.Component {
   Display_images(pos) {
     return (
         <div className={Estilos.contiene_loop}>
-
-        <img src = {Compu}  className = {Estilos.computador}></img>
-        <img id = 'foto' src={this.state.Images[pos]} className={Estilos.fondo_compu} alt = {""}></img>
-        <div className = {Estilos.mensajes}><h1>{this.state.Text[pos]}</h1></div>
+          <img src = {Compu}  className = {Estilos.computador}></img>
+          <img id = 'foto' src={this.state.Images[pos]} className={Estilos.fondo_compu} alt = {""}></img>
+          <div className = {Estilos.mensajes}><h1>{this.state.Text[pos]}</h1></div>
         </div>
     );
   }
@@ -140,15 +139,12 @@ export default class Pagina extends React.Component {
   render() {
     return (
       <div className={Estilos.contenido}>
-        
-        <div className="row no-gutters">
-          <div className="col-md-9 col-sm-12 cola">
-            <div className={Estilos.imagenes_compu}>  
+          <div className="cola">
+            <div className={Estilos.imagenes_compu}  >  
                 {this.Display_images(this.state.Image_pos)    /* Llama a la función de renderizado*/}
             </div>
           </div>
-          <div className="col-md-3 col-sm-12 cola">
-            
+          <div className="barra">
             <BarraDerecha
               Bimboficar = {this.Bimboficar}
               Cambio_coins={this.Cambio_coins}  /* La función de Cambio de monedas es ahora utilizable por este componente hijo*/
@@ -161,8 +157,7 @@ export default class Pagina extends React.Component {
             />
 
           </div>
-        </div>
-        <div className = "row no-gutters">
+        <div className={Estilos.abajito}>
           <BarraAbajo Valores={this.state} Bimbofication = {this.state.Bimbofication}
            Clicking_dick =  {this.Clicking_dick} /* Se llama al componente "BarraAbajo" */ /> 
         </div>

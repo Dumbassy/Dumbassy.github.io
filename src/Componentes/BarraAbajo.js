@@ -33,8 +33,8 @@ export default class BarraAbajo extends React.Component {
     var Imag = document.createElement("img");
     Imag.src = this.state.img;
     Imag.className = "subir_level";
-    Imag.style.top= 548 + 'px';
-    Imag.style.left= 110 + 'px';
+    Imag.style.top= 80 + 'vh';
+    Imag.style.left= 12 + 'vw';
     document.body.appendChild(Imag);
     Imag.addEventListener("animationend", function () {
     Imag.parentElement.removeChild(Imag);
@@ -42,8 +42,8 @@ export default class BarraAbajo extends React.Component {
     var Image = document.createElement("img");
     Image.src = this.state.img;
     Image.className = "subir_level_dos";
-    Image.style.top= 548 + 'px';
-    Image.style.left= 110 + 'px';
+    Image.style.top= 80 + 'vh';
+    Image.style.left= 12 +'vw';
 
     document.body.appendChild(Image);
     Image.addEventListener("animationend", function () {
@@ -56,18 +56,14 @@ export default class BarraAbajo extends React.Component {
   render() {
     
     return (
-      <div className={Estilos.contenido}>
-        
-        <div className = "row">
+      <div className={Estilos.conntenido}>
           <div className = "col-md-3"><button  className ={Estilos.btnn} onClick = {() =>{
             this.props.Clicking_dick()
             this.Click_corazon();
-
           }}><img src = {handjob} className ={Estilos.handjob}></img></button></div>
           <div className = "col-md-4 padiando"><Estadisticas Values={this.props.Valores}/></div>
           <div className = "col-md-5 alin">{this.Character_transformation(this.props.Valores.Bimbofication)}</div>
         </div> 
-      </div>
     );
   }
 }

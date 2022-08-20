@@ -1,22 +1,24 @@
-.contenido {
-  width: 100%;
-  height: 20rem;
+
+.conntenido {
+  width: 100vw;
+  height: 20vh;
   background-color: #0b0006;
+  display:flex;
   color: white;
   border-top: 17px  rgba(20, 141, 223, 0.4);
   font-family: 'Caveat', cursive;
-  font-size: 20px;
+  font-size: 25px;
 }
 .HandStatus {
   width: 33%;
 }
 .handjob {
-  height: 200px;
-  width: 200px;
+  height: 30%;
+  width: 30%;
 }
 .handjob:hover{
-  height: 210px;
-  width:210px;
+  height: 35%;
+  width:35%;
 }
 .handjob:active{
   transform: translateY(8px);
@@ -28,10 +30,10 @@
   box-shadow: 0;
 }
 .main_character {
-  height: 200px;
-  width: 200px;
+  height: 100%;
+  width: 35%;
   position:relative;
-  right:11vh;
+  right:10vh;
 }
 .espaciando {
   padding-right: 2vh;
@@ -47,16 +49,15 @@
 
 .Derecha_contenido {
   justify-content: start;
-  min-width: 100%;
-  width: 60em;
-  max-width: 100%;
-  height: 26.5em;
+  height: 100%;
+  width: 100%;
   background-color: #650139;
   overflow-y: scroll;
   padding:0;
   margin:0;
   border:0;
-  font-size: 20px;
+  z-index: 40;
+  font-size: 15px;
   overflow-x: hidden;
 }
 
@@ -92,7 +93,7 @@
 }
 .Title {
   width: 100%;
-  height: 18vh;
+  height: 10vh;
 }
 .Span_title {
   padding:0;
@@ -101,7 +102,7 @@
 }
 .tam_images{
     height:13vh;
-    width:13vh;
+    width:5vw;
     margin-right: 2rem;
 }
 
